@@ -3,10 +3,10 @@ package com.MoskBohd;
 import java.util.Objects;
 
 public class IsoscelesTrapezoid {
-    double lenghtUp = 1;
-    double lenghtDown = 1.5;
-    double height = 1;
-    double area = height*(lenghtUp+lenghtDown)/2;
+    double lenghtUp = 0;
+    double lenghtDown = 0;
+    double height = 0;
+    double area = 0;
 
     // Constructor
     public IsoscelesTrapezoid(int lenghtUp, int lenghtDown, int height) {
@@ -40,16 +40,22 @@ public class IsoscelesTrapezoid {
         this.height = height;
     }
 
-    public double getArea() {
-        return area;
-    }
-
-    public void setArea(double area) {
-        this.area = area;
-    }
-
     // 5 methods
-
+    public double getArea(){
+        return (this.getLenghtDown() + this.getLenghtUp()) * this.getHeight()/2;
+    }
+    public double getPerimeter(){
+        return (this.getLenghtDown() + this.getLenghtUp() + 2 * this.getHeight());
+    }
+    public double getLengthOfSide(){
+        return Math.sqrt(Math.pow((this.getLenghtDown() - this.getLenghtUp())/2, 2) + Math.pow(this.getHeight(), 2));
+    }
+    public double getLengthOfEachDiagonal(){
+        return Math.sqrt(this.getLenghtDown() * this.getLenghtUp() + Math.pow(getLengthOfSide(), 2));
+    }
+    public double getAcuteAngle(){
+        return Math.acos(((2 * this.getLengthOfSide()) / (this.getLenghtUp() * this.getLenghtDown())));
+    }
 
     // Override toString() method
     @Override
@@ -58,7 +64,6 @@ public class IsoscelesTrapezoid {
                 "lenghtUp=" + lenghtUp +
                 ", lenghtDown=" + lenghtDown +
                 ", height=" + height +
-                ", area=" + area +
                 '}';
     }
 
