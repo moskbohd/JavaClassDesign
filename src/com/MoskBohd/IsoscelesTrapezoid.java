@@ -50,7 +50,7 @@ public class IsoscelesTrapezoid {
 
     // 5 methods
 
-    
+
     // Override toString() method
     @Override
     public String toString() {
