@@ -9,6 +9,7 @@ public class IsoscelesTrapezoid {
     double area = 0;
 
     // Constructor
+
     public IsoscelesTrapezoid(int lenghtUp, int lenghtDown, int height) {
         this.lenghtUp = lenghtUp;
         this.lenghtDown = lenghtDown;
@@ -51,7 +52,7 @@ public class IsoscelesTrapezoid {
         return Math.sqrt(Math.pow((this.getLenghtDown() - this.getLenghtUp())/2, 2) + Math.pow(this.getHeight(), 2));
     }
     public double getLengthOfEachDiagonal(){
-        return Math.sqrt(this.getLenghtDown() * this.getLenghtUp() + Math.pow(getLengthOfSide(), 2));
+        return Math.sqrt(this.getLenghtDown() * this.getLenghtUp() + Math.pow(this.getLengthOfSide(), 2));
     }
     public double getAcuteAngle(){
         return Math.acos(((2 * this.getLengthOfSide()) / (this.getLenghtUp() * this.getLenghtDown())));

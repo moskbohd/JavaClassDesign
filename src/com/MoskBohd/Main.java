@@ -11,7 +11,5 @@ public class Main {
                 " cm, length of side = "+ isoscelesTrapezoid.getLengthOfSide() +
                 " cm, length of each diagonal = " + isoscelesTrapezoid.getLengthOfEachDiagonal() +
                 " cm, acute angle = " + isoscelesTrapezoid.getAcuteAngle() + "°");
-
-
     }
 }
