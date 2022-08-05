@@ -9,20 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class IsoscelesTrapezoidTest {
 
-    IsoscelesTrapezoid isoscelesTrapezoid = new IsoscelesTrapezoid(2, 3, 5);
-    private double testArea;
-    private double testPerimeter;
-    private double testLengthOfSide;
-    private double testLengthOfEachDiagonal;
-    private double testAcuteAngle;
+    public IsoscelesTrapezoid isoscelesTrapezoidTest;
 
     @BeforeEach
     public void setUp() {
-        testArea = (isoscelesTrapezoid.getLenghtDown() + isoscelesTrapezoid.getLenghtUp()) * isoscelesTrapezoid.getHeight()/2;
-        testPerimeter = (isoscelesTrapezoid.getLenghtDown() + isoscelesTrapezoid.getLenghtUp() + 2 * isoscelesTrapezoid.getHeight());
-        testLengthOfSide = Math.sqrt(Math.pow((isoscelesTrapezoid.getLenghtDown() - isoscelesTrapezoid.getLenghtUp())/2, 2) + Math.pow(isoscelesTrapezoid.getHeight(), 2));
-        testLengthOfEachDiagonal = Math.sqrt(isoscelesTrapezoid.getLenghtDown() * isoscelesTrapezoid.getLenghtUp() + Math.pow(isoscelesTrapezoid.getLengthOfSide(), 2));
-        testAcuteAngle = Math.acos(((2 * isoscelesTrapezoid.getLengthOfSide()) / (isoscelesTrapezoid.getLenghtUp() * isoscelesTrapezoid.getLenghtDown())));
+        isoscelesTrapezoidTest = new IsoscelesTrapezoid(2, 3, 5);
     }
 
     @AfterEach
@@ -31,31 +22,26 @@ class IsoscelesTrapezoidTest {
 
     @Test
     void getArea() {
-        System.out.println("@Test Area(): " + isoscelesTrapezoid.getArea() + " = " + testArea);
-        assertEquals(testArea, isoscelesTrapezoid.getArea());
+        assertEquals(12.5, isoscelesTrapezoidTest.getArea(),0.01);
     }
 
     @Test
     void getPerimeter() {
-        System.out.println("@Test Perimeter(): " + isoscelesTrapezoid.getPerimeter() + " = " + testPerimeter);
-        assertEquals(testPerimeter, isoscelesTrapezoid.getPerimeter());
+        assertEquals(15, isoscelesTrapezoidTest.getPerimeter(), 0.01);
     }
 
     @Test
     void getLengthOfSide() {
-        System.out.println("@Test LengthOfSide(): " + isoscelesTrapezoid.getLengthOfSide() + " = " + testLengthOfSide);
-        assertEquals(testLengthOfSide, isoscelesTrapezoid.getLengthOfSide());
+        assertEquals(5, isoscelesTrapezoidTest.getLengthOfSide(), 0.01);
     }
 
     @Test
     void getLengthOfEachDiagonal() {
-        System.out.println("@Test LengthOfEachDiagonal(): " + isoscelesTrapezoid.getLengthOfEachDiagonal() + " = " + testLengthOfEachDiagonal);
-        assertEquals(testLengthOfEachDiagonal, isoscelesTrapezoid.getLengthOfEachDiagonal());
+        assertEquals(5.5, isoscelesTrapezoidTest.getLengthOfEachDiagonal(), 0.01);
     }
 
     @Test
     void getAcuteAngle() {
-        System.out.println("@Test AcuteAngle(): " + isoscelesTrapezoid.getAcuteAngle() + " = " + testAcuteAngle);
-        assertEquals(testAcuteAngle, isoscelesTrapezoid.getAcuteAngle());
+        assertEquals(0.6, isoscelesTrapezoidTest.getAcuteAngle(), 0.01);
     }
 }

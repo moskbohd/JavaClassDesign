@@ -3,34 +3,32 @@ package com.MoskBohd;
 import java.util.Objects;
 
 public class IsoscelesTrapezoid {
-    double lenghtUp = 0;
-    double lenghtDown = 0;
+    double lengthUp = 0;
+    double lengthDown = 0;
     double height = 0;
-    double area = 0;
 
     // Constructor
-
-    public IsoscelesTrapezoid(int lenghtUp, int lenghtDown, int height) {
-        this.lenghtUp = lenghtUp;
-        this.lenghtDown = lenghtDown;
+    public IsoscelesTrapezoid(int lengthUp, int lengthDown, int height) {
+        this.lengthUp = lengthUp;
+        this.lengthDown = lengthDown;
         this.height = height;
     }
 
     // Getters/Setters
-    public double getLenghtUp() {
-        return lenghtUp;
+    public double getLengthUp() {
+        return lengthUp;
     }
 
-    public void setLenghtUp(double lenghtUp) {
-        this.lenghtUp = lenghtUp;
+    public void setLengthUp(double lengthUp) {
+        this.lengthUp = lengthUp;
     }
 
-    public double getLenghtDown() {
-        return lenghtDown;
+    public double getLengthDown() {
+        return lengthDown;
     }
 
-    public void setLenghtDown(double lenghtDown) {
-        this.lenghtDown = lenghtDown;
+    public void setLengthDown(double lengthDown) {
+        this.lengthDown = lengthDown;
     }
 
     public double getHeight() {
@@ -43,27 +41,27 @@ public class IsoscelesTrapezoid {
 
     // 5 methods
     public double getArea(){
-        return (this.getLenghtDown() + this.getLenghtUp()) * this.getHeight()/2;
+        return (this.getLengthDown() + this.getLengthUp()) * this.getHeight()/2;
     }
     public double getPerimeter(){
-        return (this.getLenghtDown() + this.getLenghtUp() + 2 * this.getHeight());
+        return (this.getLengthDown() + this.getLengthUp() + 2 * this.getHeight());
     }
     public double getLengthOfSide(){
-        return Math.sqrt(Math.pow((this.getLenghtDown() - this.getLenghtUp())/2, 2) + Math.pow(this.getHeight(), 2));
+        return Math.sqrt(Math.pow((this.getLengthDown() - this.getLengthUp())/2, 2) + Math.pow(this.getHeight(), 2));
     }
     public double getLengthOfEachDiagonal(){
-        return Math.sqrt(this.getLenghtDown() * this.getLenghtUp() + Math.pow(this.getLengthOfSide(), 2));
+        return Math.sqrt(this.getLengthDown() * this.getLengthUp() + Math.pow(this.getLengthOfSide(), 2));
     }
     public double getAcuteAngle(){
-        return Math.acos(((2 * this.getLengthOfSide()) / (this.getLenghtUp() * this.getLenghtDown())));
+        return Math.acos(((2 * this.getLengthOfSide()) / (this.getLengthUp() * this.getLengthDown())));
     }
 
     // Override toString() method
     @Override
     public String toString() {
         return "IsoscelesTrapezoid{" +
-                "lenghtUp=" + lenghtUp +
-                ", lenghtDown=" + lenghtDown +
+                "lengthUp=" + lengthUp +
+                ", lengthDown=" + lengthDown +
                 ", height=" + height +
                 '}';
     }
@@ -74,11 +72,11 @@ public class IsoscelesTrapezoid {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         IsoscelesTrapezoid that = (IsoscelesTrapezoid) o;
-        return Double.compare(that.getLenghtUp(), getLenghtUp()) == 0 && Double.compare(that.getLenghtDown(), getLenghtDown()) == 0 && Double.compare(that.getHeight(), getHeight()) == 0 && Double.compare(that.getArea(), getArea()) == 0;
+        return Double.compare(that.getLengthUp(), getLengthUp()) == 0 && Double.compare(that.getLengthDown(), getLengthDown()) == 0 && Double.compare(that.getHeight(), getHeight()) == 0 && Double.compare(that.getArea(), getArea()) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getLenghtUp(), getLenghtDown(), getHeight(), getArea());
+        return Objects.hash(getLengthUp(), getLengthDown(), getHeight(), getArea());
     }
 }
