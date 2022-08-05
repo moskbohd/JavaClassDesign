@@ -1,5 +1,6 @@
-package com.MoskBohd;
+package com.MoskBohd.Test;
 
+import com.MoskBohd.IsoscelesTrapezoid;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
